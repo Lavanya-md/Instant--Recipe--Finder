@@ -1,0 +1,69 @@
+/* This styles the whole background and centers your app */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fefae0; /* A soft, warm kitchen color */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* This restricts the width so it looks neat on laptops and mobile phones */
+.app-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #606c38; /* Forest green heading */
+}
+
+/* Styles the input box */
+.search-box input {
+    padding: 12px;
+    width: 60%;
+    border: 2px solid #bde0fe;
+    border-radius: 25px;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* Styles the search button */
+.search-box button {
+    padding: 12px 20px;
+    background-color: #283618;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+/* This is the magic grid that will display recipes side-by-side */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Styles individual recipe cards that JavaScript will generate */
+.recipe-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px); /* Makes card slightly lift up on hover */
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Keeps image from looking stretched */
+}
