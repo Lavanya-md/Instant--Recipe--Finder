@@ -1,9 +1,9 @@
-// 1. Grab the elements from our HTML page so JavaScript can control them
+//  Grab the elements from our HTML page so JavaScript can control them
 const searchBtn = document.getElementById('search-btn');
 const ingredientInput = document.getElementById('ingredient-input');
 const recipeGrid = document.getElementById('recipe-grid');
 
-// 2. Listen for when the user clicks the "Find Recipes" button
+//  Listen for when the user clicks the "Find Recipes" button
 searchBtn.addEventListener('click', () => {
     const ingredient = ingredientInput.value.trim();
     
@@ -16,7 +16,7 @@ searchBtn.addEventListener('click', () => {
     // Show a temporary loading message in our grid
     recipeGrid.innerHTML = "<p>Searching for delicious meals...</p>";
 
-    // 3. THE API CONNECTION: Ask the online database for data
+    // THE API CONNECTION: Ask the online database for data
     // We send a request to TheMealDB server using the ingredient the user typed
     const apiURL = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`;
 
@@ -31,7 +31,7 @@ searchBtn.addEventListener('click', () => {
                 return;
             }
 
-            // 4. THE LOOP: Go through every single meal found and create a visual card
+            // THE LOOP: Go through every single meal found and create a visual card
             data.meals.forEach(meal => {
                 // Create a brand new <div> box out of thin air for this specific recipe
                 const recipeCard = document.createElement('div');
